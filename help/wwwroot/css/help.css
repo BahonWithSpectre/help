@@ -1,0 +1,74 @@
+
+.help-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    border-radius: 2px;
+    padding: 15px;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+
+.help-text {
+    width: 70%;
+}
+.help-data {
+    width: 30%;
+}
+.help-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+    color: red;
+}
+.help-text > .help-title {
+    color: black;
+}
+.help-data > h3, .help-city, .help-phone {
+    margin-bottom: 10px;
+}
+.help-city > span, .help-phone > span {
+    margin-right: 5px;
+}
+.help-city > span, .help-phone > span {
+    font-weight: bold;
+    color: red;
+}
+.help-icons{
+    display: flex;
+}
+.help-icons > a {
+    width: 25px;
+    height: 25px;
+    border: 1px solid red;
+    border-radius: 50%;
+    margin-right: 15px;
+    text-align: center;
+}
+.help-icons i {
+    font-size: 16px;
+}
+@media (max-width: 768px){
+    .help-block {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    .help-text, .help-data {
+        width: 100%;
+    }
+    .help-title {
+        font-size: 16px;
+    }
+    .help-city, .help-phone {
+        margin-bottom: 5px;
+    }
+    .help-city, .help-phone, .help-city > span, .help-phone > span {
+        font-size: 14px !important;
+    }
+    .help-icons > a {
+        margin-right: 5px;
+    }
+}
