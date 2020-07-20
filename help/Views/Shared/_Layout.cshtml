@@ -36,6 +36,8 @@
     <!-- Main Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
 
+
+
     <!--Favicon-->
     <link rel="icon" href="~/img/favicon/favicon-32x32.png" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/img/favicon/favicon-144x144.png">
@@ -45,9 +47,23 @@
 </head>
 <body>
 
-
-
-    <!-- Style switcher start -->
+    <div id="banner-area">
+        <img src="~/img/help-fon.jpg" alt="" />
+        <div class="parallax-overlay"></div>
+        <!-- Subpage title start -->
+        <div class="banner-title-content">
+            <div class="text-center">
+                <h2>Центр взаимопомощи</h2>
+                <nav aria-label="breadcrumb">
+                    @*<ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-white" aria-current="page">Центр взаимопомощи</li>
+                        </ol>*@
+                </nav>
+            </div>
+        </div><!-- Subpage title end -->
+    </div><!-- Banner area end -->
+    <!--
     <div class="style-switch-wrapper">
         <div class="style-switch-button">
             <i class="fa fa-sliders"></i>
@@ -62,13 +78,13 @@
         <br /><br />
         <a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
     </div>
-    <!-- Style switcher end -->
+    -->
 
     <div class="body-inner">
 
         <!-- Header start -->
         <header id="header" class="fixed-top header" role="banner">
-            <a class="navbar-brand navbar-bg" href="index.html"><img class="img-fluid float-right" src="images/logo.png" style="height:100%;" alt="logo"></a>
+            <a class="navbar-brand navbar-bg" href="/Home/Index"><img class="img-fluid float-right" src="~/images/logo.png" style="height:100%;" alt="logo"></a>
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse"
@@ -78,78 +94,8 @@
 
                     <div class="collapse navbar-collapse text-center" id="navigation">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown active">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Home
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="index.html">Homepage 1</a>
-                                    <a class="dropdown-item" href="index-2.html">Homepage 2</a>
-                                    <a class="dropdown-item" href="index-3.html">Homepage 3</a>
-                                    <a class="dropdown-item" href="index-4.html">Homepage 4</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Company
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about.html">About Us</a>
-                                    <a class="dropdown-item" href="service.html">Services</a>
-                                    <a class="dropdown-item" href="career.html">Career</a>
-                                    <a class="dropdown-item" href="testimonial.html">Testimonials</a>
-                                    <a class="dropdown-item" href="faq.html">Faq</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Portfolio
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="portfolio-classic.html">Portfolio Classic</a>
-                                    <a class="dropdown-item" href="portfolio-static.html">Portfolio Static</a>
-                                    <a class="dropdown-item" href="portfolio-item.html">Portfolio Single</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Pages
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="team.html">Our Team</a>
-                                    <a class="dropdown-item" href="about2.html">About Us - 2</a>
-                                    <a class="dropdown-item" href="service2.html">Services - 2</a>
-                                    <a class="dropdown-item" href="service-single.html">Services Single</a>
-                                    <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-                                    <a class="dropdown-item" href="404.html">404 Page</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Blog
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="blog-rightside.html">Blog with Sidebar</a>
-                                    <a class="dropdown-item" href="blog-item.html">Blog Single</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Features
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="typography.html">Typography</a>
-                                    <a class="dropdown-item" href="elements.html">Elements</a>
-                                </div>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a></a>
+                                <a style="margin:10px!important;" class="btn btn-success" href="/Home/Creat">Могу помочь / Нужна помощь</a>
                             </li>
                         </ul>
                     </div>
