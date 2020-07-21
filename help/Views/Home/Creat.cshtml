@@ -1,0 +1,57 @@
+﻿@model help.DbFolder.Help
+@{
+    ViewData["Title"] = "Creat";
+}
+<link rel="stylesheet" href="~/css/create.css">
+
+
+<div id="section" class="section">
+    <form asp-action="Creat">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-blocks">
+            <div class="form-block">
+                <label for="username">Ваше имя:</label>
+                <input id="username" asp-for="UserName" type="text" required>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+
+                <label for="phone">Номер телефона:</label>
+                <input id="phone" asp-for="PhoneNumber" type="number" required>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                <div class="social">
+                    <label>
+                        <input asp-for="WhatsApp" type="checkbox" /> @Html.DisplayNameFor(model => model.WhatsApp)
+                    </label>
+                    <label>
+                        <input asp-for="Telegram" type="checkbox" /> @Html.DisplayNameFor(model => model.Telegram)
+                    </label>
+                </div>
+
+                <label for="city">Город:</label>
+                <select id="city" name="CityId">
+                    @foreach (var d in ViewBag.City)
+                    {
+                        <option value="@d.Id">@d.CityName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-block">
+                <label for="category">Категория:</label>
+                <select id="category" name="Category">
+                    <option value="Нужна Помощь">Нужна помощь</option>
+                    <option value="Могу Помочь">Могу помочь</option>
+                    <option value="Уже Помогли">Уже помогли</option>
+                </select>
+
+                <label for="title">Заголовок:</label>
+                <input id="title" asp-for="Title" type="text" required>
+                <span asp-validation-for="Title" class="text-danger"></span>
+
+                <label for="info">Описание:</label>
+                <textarea id="info" asp-for="Info" rows="5" required></textarea>
+                <span asp-validation-for="Info" class="text-danger"></span>
+            </div>
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
