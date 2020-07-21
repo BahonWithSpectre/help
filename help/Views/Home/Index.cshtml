@@ -1,246 +1,157 @@
 ﻿@model IEnumerable<help.DbFolder.Help>
 @{
-    
     ViewData["Title"] = "Главное";
 }
+<link rel="stylesheet" href="~/css/index.css">
 
 
 
-<link rel="stylesheet" href="~/css/help.css">
+<!--
+
+if (d.Category == "Нужна Помощь")
+if (d.Category == "Уже Помогли")
+
+-->
 
 
-<!-- Main container start -->
-<section id="main-container">
-    <div class="container">
+<div id="section" class="section">
+    <div class="sidebar">
+        <form asp-action="Index">
+            <label for="city">Город:</label>
+            <select name="city" id="city">
+                @foreach (var g in ViewBag.City)
+                {
+                    <option value="@g.Id">@g.CityName</option>
+                }
+            </select>
+            <label for="category">Категория:</label>
+            <select name="type" id="category">
+                <option value="all">Все</option>
+                <option>Продукты питание</option>
+                <option>Лекарство</option>
+            </select>
+            <button type="submit">Поиск</button>
+        </form>
 
-
-        @*<div class="row">
-            <div class="col-md-12 heading">
-                <span class="title-icon classic float-left"></span>
-                <h2 class="title classic">Категория</h2>
-
-            </div>
-        </div>*@
-
-        <div class="row landing-tab">
-            <div class="col-md-3 col-sm-5">
-                <div class="nav flex-column nav-pills border-right form-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
-                    <form class="form-group" asp-action="Index">
-                        <p>Город:</p>
-                        <select name="city" class="form-control">
-                            @foreach (var g in ViewBag.City)
-                            {
-                                <option value="@g.Id">@g.CityName</option>
-                            }
-                        </select>
-                        <hr />
-                        <p>Категория</p>
-                        <select name="type" class="form-control">
-                            <option value="all">Все</option>
-                            <option>Продукты питание</option>
-                            <option>Лекарство</option>
-                        </select>
-                        <hr />
-                        <input class="btn btn-warning" value="Поиск" type="submit" />
-                    </form>
-
-                    <a class="animated fadeIn nav-link py-4 active d-flex align-items-center form-control" data-toggle="pill" href="#tab_1"
-                       role="tab" aria-selected="true">
-                        <span class="h4 mb-0 font-weight-bold">Могу Помочь</span>
-                    </a>
-                    <a class="animated fadeIn nav-link py-4 d-flex align-items-center form-control" data-toggle="pill" href="#tab_2" role="tab"
-                       aria-selected="true">
-                        <span class="h4 mb-0 font-weight-bold">Нужна Помощь</span>
-                    </a>
-                    <a class="animated fadeIn nav-link py-4 d-flex align-items-center form-control" data-toggle="pill" href="#tab_3" role="tab"
-                       aria-selected="true">
-                        <span class="h4 mb-0 font-weight-bold">Уже помогли</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-7">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane pl-sm-5 fade show active animated fadeInLeft" id="tab_1" role="tabpanel">
-                        @foreach (var d in Model)
-                        {
-                            if (d.Category == "Могу Помочь")
-                            {
-                                <div class="row">
-                                    <div class="help-block">
-                                        <div class="help-text">
-                                            <div class="help-title">@d.Title</div>
-                                            <p>
-                                                @d.Info
-                                            </p>
-                                        </div>
-                                        <div class="help-data">
-                                            <div class="help-title">@d.UserName</div>
-                                            <p class="help-city"><span>Город:</span>@d.City.CityName</p>
-                                            <p class="help-phone"><span>Телефон:</span>@d.PhoneNumber</p>
-                                            <p class="help-icons">
-                                                @if (d.WhatsApp == true)
-                                                {
-                                                    <a href="#" title="WhatsApp">
-                                                        <i class="fa fa-whatsapp"></i>
-                                                    </a>
-                                                }
-                                                @if (d.Telegram == true)
-                                                {
-                                                    <a href="#" title="Telegram">
-                                                        <i class="fa fa-phone"></i>
-                                                    </a>
-                                                }
-
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        }
-
-
-                    </div>
-
-                    <div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_2" role="tabpanel">
-                        @foreach (var d in Model)
-                        {
-                            if (d.Category == "Нужна Помощь")
-                            {
-                                <div class="row">
-                                    <div class="help-block">
-                                        <div class="help-text">
-                                            <div class="help-title">@d.Title</div>
-                                            <p>
-                                                @d.Info
-                                            </p>
-                                        </div>
-                                        <div class="help-data">
-                                            <div class="help-title">@d.UserName</div>
-                                            <p class="help-city"><span>Город:</span>@d.City.CityName</p>
-                                            <p class="help-phone"><span>Телефон:</span>@d.PhoneNumber</p>
-                                            <p class="help-icons">
-                                                @if (d.WhatsApp == true)
-                                                {
-                                                    <a href="#" title="WhatsApp">
-                                                        <i class="fa fa-whatsapp"></i>
-                                                    </a>
-                                                }
-                                                @if (d.Telegram == true)
-                                                {
-                                                    <a href="#" title="Telegram">
-                                                        <i class="fa fa-phone"></i>
-                                                    </a>
-                                                }
-
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        }
-                    </div>
-
-                    <div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_3" role="tabpanel">
-                        @foreach (var d in Model)
-                        {
-                            if (d.Category == "Уже Помогли")
-                            {
-                                <div class="row">
-                                    <div class="help-block">
-                                        <div class="help-text">
-                                            <div class="help-title">@d.Title</div>
-                                            <p>
-                                                @d.Info
-                                            </p>
-                                        </div>
-                                        <div class="help-data">
-                                            <div class="help-title">@d.UserName</div>
-                                            <p class="help-city"><span>Город:</span>@d.City.CityName</p>
-                                            <p class="help-phone"><span>Телефон:</span>@d.PhoneNumber</p>
-                                            <p class="help-icons">
-                                                @if (d.WhatsApp == true)
-                                                {
-                                                    <a href="#" title="WhatsApp">
-                                                        <i class="fa fa-whatsapp"></i>
-                                                    </a>
-                                                }
-                                                @if (d.Telegram == true)
-                                                {
-                                                    <a href="#" title="Telegram">
-                                                        <i class="fa fa-phone"></i>
-                                                    </a>
-                                                }
-
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        }
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!--/ Content row end -->
-    </div>
-    <!--/ 1st container end -->
-
-
-    <div class="gap-60"></div>
-</section>
-<!--/ Main container end -->
-<!-- Copyright start -->
-<section id="copyright" class="copyright angle">
-    <div class="container">
-        <div class="row">
-            @*<div class="col-md-12 text-center">
-                <ul class="footer-social unstyled">
-                    <li>
-                        <a title="Twitter" href="#">
-                            <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
-                        </a>
-                        <a title="Facebook" href="#">
-                            <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
-                        </a>
-                        <a title="Google+" href="#">
-                            <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-                        </a>
-                        <a title="linkedin" href="#">
-                            <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-                        </a>
-                        <a title="Pinterest" href="#">
-                            <span class="icon-pentagon wow bounceIn"><i class="fa fa-pinterest"></i></span>
-                        </a>
-                        <a title="Skype" href="#">
-                            <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
-                        </a>
-                        <a title="Dribble" href="#">
-                            <span class="icon-pentagon wow bounceIn"><i class="fa fa-dribbble"></i></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>*@
-        </div>
-        <!--/ Row end -->
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="copyright-info">
-                    &copy; Copyright 2019 Themefisher. <span>
-                        Designed by <a href="https://themefisher.com">Themefisher.com</a>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <!--/ Row end -->
-        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
-            <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+        <div class="tabs">
+            <a href="#" class="yellow-tab act-tab">Могу помочь</a>
+            <a href="#">Нужна помощь</a>
+            <a href="#" class="green-tab">Уже помогли</a>
         </div>
     </div>
-    <!--/ Container end -->
-</section>
 
+    <div class="result">
+        <div class="result-item yellow-result act-result">
+            @foreach (var d in Model)
+            {
+                if (d.Category == "Могу Помочь")
+                {
+                    <div class="help-block">
+                        <div class="help-text">
+                            <div class="help-title">@d.Title</div>
+                            <p>@d.Info</p>
+                        </div>
+                        <div class="help-data">
+                            <div class="help-title">@d.UserName</div>
+                            <p class="help-city"><span>Город:</span>@d.City.CityName</p>
+                            <p class="help-phone"><span>Телефон:</span>@d.PhoneNumber</p>
+                            <div class="social">
+                                @if (d.WhatsApp == true)
+                                {
+                                    <a href="whatsapp" class="whatsapp">
+                                        <i class="fa fa-whatsapp"></i>
+                                    </a>
+                                }
+                                @if (d.Telegram == true)
+                                {
+                                    <a href="telegram" class="telegram">
+                                        <i class="fa fa-telegram"></i>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="result-item">
+            @foreach (var d in Model)
+            {
+                if (d.Category == "Нужна Помощь")
+                {
+                    <div class="help-block">
+                        <div class="help-text">
+                            <div class="help-title">@d.Title</div>
+                            <p>@d.Info</p>
+                        </div>
+                        <div class="help-data">
+                            <div class="help-title">@d.UserName</div>
+                            <p class="help-city"><span>Город:</span>@d.City.CityName</p>
+                            <p class="help-phone"><span>Телефон:</span>@d.PhoneNumber</p>
+                            <div class="social">
+                                @if (d.WhatsApp == true)
+                                {
+                                    <a href="whatsapp" class="whatsapp">
+                                        <i class="fa fa-whatsapp"></i>
+                                    </a>
+                                }
+                                @if (d.Telegram == true)
+                                {
+                                    <a href="telegram" class="telegram">
+                                        <i class="fa fa-telegram"></i>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="result-item green-result">
+            @foreach (var d in Model)
+            {
+                if (d.Category == "Уже Помогли")
+                {
+                    <div class="help-block">
+                        <div class="help-text">
+                            <div class="help-title">@d.Title</div>
+                            <p>@d.Info</p>
+                        </div>
+                        <div class="help-data">
+                            <div class="help-title">@d.UserName</div>
+                            <p class="help-city"><span>Город:</span>@d.City.CityName</p>
+                            <p class="help-phone"><span>Телефон:</span>@d.PhoneNumber</p>
+                            <div class="social">
+                                @if (d.WhatsApp == true)
+                                {
+                                    <a href="whatsapp" class="whatsapp">
+                                        <i class="fa fa-whatsapp"></i>
+                                    </a>
+                                }
+                                @if (d.Telegram == true)
+                                {
+                                    <a href="telegram" class="telegram">
+                                        <i class="fa fa-telegram"></i>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.tabs > a').click(function (e) {
+            e.preventDefault();
+            $('.tabs > a').removeClass('act-tab');
+            $(this).addClass('act-tab');
 
-
+            $('.result-item').removeClass('act-result');
+            $('.result-item').eq($(this).index()).addClass('act-result');
+        });
+    });
+</script>
 

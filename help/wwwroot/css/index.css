@@ -1,0 +1,321 @@
+@import url('const.css');
+
+/* ----------------CONTENT------------------ */
+
+.main{
+   width: 100%;
+   height: 400px;
+   background-color: var(--grey-color);
+   background-image: url(../img/overaly.png);
+   background-repeat: repeat;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.main > h1{
+   color: var(--white-color);
+   font-size: 45px;
+   /* font-family: serif; */
+   letter-spacing: 1px;
+   font-weight: normal;
+}
+
+/* ------------------- */
+
+.section{
+   width: 100%;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   display: flex;
+   justify-content: space-between;
+   outline: 1px solid;
+}
+
+
+.sidebar{
+   width: 300px;
+}
+.sidebar > form{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   border-bottom: 1px solid var(--red-color);
+   padding-bottom: 40px;
+   margin-bottom: 40px;
+}
+.sidebar > form > button{
+   padding: 10px;
+   font-weight: bold;
+   font-size: 13px;
+   text-transform: uppercase;
+   color: var(--main-color);
+   background-color: #ffc107;
+   cursor: pointer;
+   outline: none;
+	border: none;
+	border-radius: 2px;
+   box-shadow: 0 0 3px var(--grey-color);
+   margin-top: 10px;
+}
+.sidebar > form > label{
+   margin-bottom: 5px;
+   padding-left: 12px;
+}
+.sidebar > form > select{
+   width: 100%;
+   margin-bottom: 15px;
+   padding: 7px 10px;
+   background-color: var(--white-color);
+	border-radius: 2px;
+	border: none;
+   box-shadow: 0 0 1px var(--grey-color);
+}
+.sidebar > form > select:focus{
+	outline: 2px solid var(--brown-color);
+}
+
+
+/* ------tabs------ */
+.tabs{
+   display: flex;
+   flex-direction: column;
+}
+.tabs > a{
+   width: 100%;
+   padding: 15px;
+   font-weight: bold;
+   text-align: center;
+   text-decoration: none;
+   border-top-left-radius: 3px;
+   border-bottom-left-radius: 3px;
+   box-shadow: inset 0 0 1px var(--grey-color);
+   border: 1px solid transparent;
+   position: relative;
+   transition: 0.2s;
+}
+.tabs > a:focus{
+   border: 1px solid var(--red-color);
+}
+.tabs > a.green-tab:focus{
+   border: 1px solid var(--green-color);
+}
+.tabs > a.yellow-tab:focus{
+   border: 1px solid #ffc107;
+}
+.act-tab::after{
+   content: "";
+   width: 5px;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: -1px;
+   background-color: var(--red-color);
+}
+.green-tab::after{
+   background-color: var(--green-color);
+}
+.yellow-tab::after{
+   background-color: #ffc107;
+}
+
+/* ----result----- */
+.result{
+   width: 65%;
+}
+.result-item{
+   height: 0;
+   overflow: hidden;
+   /* transform: scale(0); */
+   transition: 0.2s;
+}
+.act-result{
+   height: auto;
+   /* transform: scale(1); */
+}
+.help-block {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   box-shadow: inset 0 0 3px var(--red-color);
+   border: 1px solid var(--red-color);
+   border-radius: 2px;
+   padding: 15px;
+   /* padding-bottom: 0; */
+   margin-bottom: 15px;
+}
+.green-result > .help-block{
+   border-color: var(--green-color);
+   box-shadow: inset 0 0 3px var(--green-color);
+}
+.yellow-result > .help-block{
+   border-color: #ffc107;
+   box-shadow: inset 0 0 3px #ffc107;
+}
+.help-text {
+   width: 60%;
+}
+.help-data {
+   width: 40%;
+}
+.help-title {
+   font-size: 18px;
+   margin-bottom: 10px;
+   text-decoration: underline;
+   font-weight: bold;
+   color: red;
+}
+.help-text > .help-title {
+   color: black;
+}
+.help-data > h3 {
+   margin-bottom: 10px;
+}
+.help-city, .help-phone {
+   margin-bottom: 5px;
+}
+.help-city > span, .help-phone > span {
+   margin-right: 5px;
+}
+.help-city > span, .help-phone > span {
+   font-weight: bold;
+   color: red;
+}
+
+.social{
+   display: flex;
+   margin-top: 7px;
+}
+.social > a{
+   text-decoration: none;
+   text-align: center;
+   margin-top: 5px;
+   margin-right: 5px;
+   transition: 0.3s;
+}
+.social > a.whatsapp i{
+   width: 32px;
+   height: 32px;
+   line-height: 32px;
+   font-size: 20px;
+   background: transparent;
+   color: var(--white-color);
+   background-color: #24ce61;
+   border-radius: 50%;
+   transition: 0.3s;
+}
+.social > a.telegram > i{
+   font-size: 32px;
+   color: #2fa9dc;
+   transition: 0.3s;
+}
+
+
+@media  (max-width: 1024px){
+   .main > h1{
+      font-size: 40px;
+   }
+   .sidebar{
+      width: 260px;
+   }
+   .sidebar > form{
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+   }
+   .tabs > a{
+      padding: 10px;
+   }
+   .help-title{
+      font-size: 16px !important;
+   }
+   .help-text > p, .help-city, .help-phone, .help-city > span, .help-phone > span{
+      font-size: 14px;
+   }
+}
+@media  (max-width: 880px){
+   .main{
+      height: 330px;
+   }
+   .main > h1{
+      font-size: 34px;
+   }
+   .result{
+      width: 60%;
+   }
+   .help-block{
+      flex-direction: column;
+   }
+   .help-block > *{
+      width: 100%;
+   }
+   .help-text{
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+   }
+   .sidebar > form > label, .sidebar > form > select, .tabs > a{
+      font-size: 14px;
+   }
+}
+@media  (max-width: 768px){
+   .main > h1{
+      font-size: 32px;
+   }
+   .sidebar{
+      width: 200px;
+      margin-right: 25px;
+   }
+   .result{
+      width: 65%;
+   }
+}
+@media  (max-width: 640px){
+   .section{
+      flex-direction: column;
+   }
+   .section > *{
+      width: 100%;
+   }
+   .sidebar{
+      margin-right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      border-bottom: 1px solid var(--red-color);
+      margin-bottom: 20px;
+   }
+   .sidebar > form, .tabs{
+      width: 48%;
+      margin-bottom: 0;
+      border: none;
+   }
+   .tabs{
+      padding-top: 8px;
+   }
+   .tabs > a{
+      margin-top: 15px;
+   }
+}
+@media  (max-width: 425px){
+   .sidebar{
+      flex-direction: column;
+      justify-content: start;
+      border: none;
+   }
+   .sidebar > form, .tabs{
+      width: 100%;
+   }
+   .sidebar > form{
+      border-bottom: 1px solid #ccc;
+   }
+   .help-title{
+      font-size: 14px !important;
+      margin-bottom: 5px;
+   }
+   .help-city, .help-phone{
+      margin-bottom: 0;
+   }
+}
+@media  (max-width: 375px){
+}
+@media  (max-width: 320px){
+}
