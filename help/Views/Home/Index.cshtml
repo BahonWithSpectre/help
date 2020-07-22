@@ -56,16 +56,13 @@ if (d.Category == "Уже Помогли")
                             <p class="help-city"><span>Город:</span>@d.City.CityName</p>
                             <p class="help-phone"><span>Телефон:</span>@d.PhoneNumber</p>
                             <div class="social">
+                                <a href="tel:@d.PhoneNumber" class="telephone">
+                                    <i class="fa fa-phone"></i>
+                                </a>
                                 @if (d.WhatsApp == true)
                                 {
-                                    <a href="whatsapp" class="whatsapp">
+                                    <a href="https://wa.me/@d.PhoneNumber" class="whatsapp">
                                         <i class="fa fa-whatsapp"></i>
-                                    </a>
-                                }
-                                @if (d.Telegram == true)
-                                {
-                                    <a href="telegram" class="telegram">
-                                        <i class="fa fa-telegram"></i>
                                     </a>
                                 }
                             </div>

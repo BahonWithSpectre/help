@@ -189,29 +189,29 @@
    text-decoration: none;
    text-align: center;
    margin-top: 5px;
-   margin-right: 5px;
+   margin-right: 10px;
    transition: 0.3s;
 }
-.social > a.whatsapp i{
-   width: 32px;
+.social > a > i{
+   /*width: 32px;
    height: 32px;
    line-height: 32px;
-   font-size: 20px;
-   background: transparent;
-   color: var(--white-color);
-   background-color: #24ce61;
-   border-radius: 50%;
+   border-radius: 50%;*/
+   font-size: 30px;
    transition: 0.3s;
+   color: #24ce61;
 }
-.social > a.telegram > i{
-   font-size: 32px;
-   color: #2fa9dc;
-   transition: 0.3s;
+/*
+.social > a.telephone > i{
+   color: #16698f;
 }
+.social > a.whatsapp > i{
+   color: #24ce61;
+}
+*/
 
-
-@media  (max-width: 1024px){
-   .main > h1{
+@media (max-width: 1024px) {
+    .main > h1{
       font-size: 40px;
    }
    .sidebar{
