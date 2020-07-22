@@ -43,6 +43,15 @@
                     <option value="Уже Помогли">Уже помогли</option>
                 </select>
 
+                <label for="type">Тип:</label>
+                <select name="type" id="category">
+                    <option value="Базовые потребности">Базовые потребности</option>
+                    <option value="Медикаменты">Медикаменты</option>
+                    <option value="Образование">Образование</option>
+                    <option value="Одежда">Одежда</option>
+                </select>
+
+
                 <label for="title">Заголовок:</label>
                 <input id="title" asp-for="Title" type="text" required>
                 <span asp-validation-for="Title" class="text-danger"></span>

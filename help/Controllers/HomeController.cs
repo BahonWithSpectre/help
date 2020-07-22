@@ -43,7 +43,7 @@ namespace help.Controllers
             //{
             //    list = list.Where(p => p.Category == category).ToList();
             //}
-            if(city != null)
+            if(city != null && city != 0)
             {
                 list = list.Where(p => p.CityId == city).ToList();
             }

@@ -19,6 +19,7 @@ if (d.Category == "Уже Помогли")
         <form asp-action="Index">
             <label for="city">Город:</label>
             <select name="city" id="city">
+                <option value="0">Все</option>
                 @foreach (var g in ViewBag.City)
                 {
                     <option value="@g.Id">@g.CityName</option>
@@ -27,8 +28,10 @@ if (d.Category == "Уже Помогли")
             <label for="category">Категория:</label>
             <select name="type" id="category">
                 <option value="all">Все</option>
-                <option>Продукты питание</option>
-                <option>Лекарство</option>
+                <option value="Базовые потребности">Базовые потребности</option>
+                <option value="Медикаменты">Медикаменты</option>
+                <option value="Образование">Образование</option>
+                <option value="Одежда">Одежда</option>
             </select>
             <button type="submit">Поиск</button>
         </form>
