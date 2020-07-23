@@ -42,19 +42,19 @@
    align-items: center;
    justify-content: space-between;
 }
-.red-line{
-   background-color: var(--red-color);
-   height: 5px;
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
+.red-line {
+    background-color: #24ce61;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 .fix-header{
    position: fixed;
    top: 0;
    z-index: 100;
-   background-color: var(--main-color);
+   background-color: #fff;
    box-shadow: 0 1px 10px var(--main-color);
    transition: 0.3s;
 }

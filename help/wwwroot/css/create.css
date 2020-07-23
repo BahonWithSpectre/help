@@ -37,16 +37,16 @@
    flex-direction: column;
    align-items: center;
 }
-.section > form > button{
-   padding: 10px 50px;
-   color: var(--white-color);
-   background-color: var(--main-color);
-   cursor: pointer;
-   outline: none;
-	border: none;
-	border-radius: 2px;
-   box-shadow: 0 0 3px var(--grey-color);
-}
+    .section > form > button {
+        padding: 10px 50px;
+        color: var(--white-color);
+        background-color: #27a844;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        box-shadow: 0 0 3px var(--grey-color);
+    }
 .form-blocks{
    width: 100%;
    display: flex;
